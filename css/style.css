@@ -1,0 +1,25 @@
+.base {
+	background:#FDF9DE;
+}
+.layer {
+	background:#ABE7DB;
+}
+.cat_bg {
+	background-image: url('../images/background.jpg');
+}
+
+h1.header {
+	text-align: center;
+	color: 'gray';
+	font-weight: bold;
+}
+
+h2.vice {
+	color:'gray';
+	text-align:right;
+	font-style: italic;
+}
+
+.block {
+	padding: 20px;
+}
