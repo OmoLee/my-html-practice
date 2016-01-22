@@ -3,23 +3,62 @@
   <head>
     <meta charset="utf-8">
     <title>起司日記 </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
   </head>
-  <body>
-    <h1 align="center" style="color:gray;"><strong>~~起司日記~~</strong>
-    <h2 style="color:gray;text-align:right;"><i>by omo<i>
-     <hr/>
-    <h3 align="center" style="color:light blue;"><u>2016.01.22(四)</u>
-     <p>
-     起司OS：原來我也有大小眼喔!?!?
-     </p>
-     <p>
-     <img width="300px"src="cheese2.jpg" alt="cheese"/>
-     </p>
-     <p>
-     晚安~起司大人要睡覺了~~
-     </p>
-     <p>
-     <img width="300px"src="cheese.jpg" alt="cheese"/>
-     </p>
+  <body class="cat_bg">
+    <div class="container base">
+        <h1 class="header">~~起司日記~~</h1>
+        <h2 class="vice">by omo</h2>
+        <hr />
+
+        <div class="row layer">
+            <div class="block">
+                <h3 id="today"></h3>
+                <p>
+                    猜猜起司今天做什麼 ^_^
+                </p>
+                <button id="click" class="btn btn-info">點我揭曉</button>               
+            </div>
+        </div>
+
+        <div class="row layer">
+            <div class="block">
+                <h3>2016.01.22(四)</h3>
+                <p>
+                    起司OS：原來我也有大小眼喔!?!?
+                </p>
+                <p>
+                    <img width="300px"src="cheese2.jpg" alt="cheese"/>
+                </p>
+                <p>
+                    晚安~起司大人要睡覺了~~
+                </p>
+                <p>
+                    <img width="300px"src="cheese.jpg" alt="cheese"/>
+                </p>                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var date = new Date();
+            var weekDay = date.getDay();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var date = date.getDate();
+            
+            var dateMap = ['日', '一', '二', '三', '四', '五', '六'];
+            var dateString = year + '.' + month + '.' + date + '(' + dateMap[weekDay] + ')';
+
+            document.getElementById('today').innerHTML = dateString;
+
+            $('#click').on('click', function() {
+                alert('不告訴你 ^_^');
+            })
+        })
+    </script>
   </body>
 </html>
